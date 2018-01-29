@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .errorlist{
+         color:red;
+      }
+    </style>
+  </head>
+  <body>
+    {% if messages %}
+      {% for message in messages %}
+         {{message}}
+    {% endfor %}
+    {% endif%}
+    <form method="post" enctype="multipart/form-data" action="{% url 'file_upload_final' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Upload</button>
+        </form>
+</body>
+</html>

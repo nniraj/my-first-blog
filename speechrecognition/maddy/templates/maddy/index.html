@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <table border=1>
+      <form action="/maddy/save" method="post">
+      {% csrf_token %}
+      {% for d in data%}
+      <tr colspan="3">
+        <td> {{d.text}}</td>
+      </tr>
+      <tr>
+	<td><input type="radio" value="{{d.opt1}}" name="test_{{d.id}}"/>{{d.opt1}}</td>
+	<td><input type="radio" value="{{d.opt2}}" name="test_{{d.id}}"/>{{d.opt2}}</td>
+	<td><input type="radio" value="{{d.opt3}}" name="test_{{d.id}}"/>{{d.opt3}}</td>
+	<td><input type="radio" value="{{d.opt4}}" name="test_{{d.id}}"/>{{d.opt4}}</td>
+	
+      </tr>
+      {% endfor%}
+      <tr><td><input type="submit" value="submit"/></td></tr>
+      </form>
+    </table>
+    
+  </body>
+</html>

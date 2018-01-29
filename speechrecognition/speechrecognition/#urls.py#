@@ -19,5 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'',include('voicerecognition.urls')),
-    url(r'',include('maddy.urls')),    
+    url(r'',include('maddy11.urls')),    
 ]
